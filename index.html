@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="scripts/style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="scripts/minesweeper.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <title>Minesweeper</title>
+</head>
+
+<body>
+    <h1 class="title">Minesweeper</h1>
+    <div class="game-info">
+        <div class="game-info__timer">Time: <span id="timer">0</span></div>
+        <i class='bx bx-reset' id="reset" title="reset"></i>
+        <div class="game-info__flags">Flags: <span id="flagsRemain">0</span></div>
+    </div>
+    <div class="win" id="win">
+        <div class="win__message__title">You win!</div>
+        <div class="time">
+            <div class="info__title">Time:</div>
+            <div class="info__value" id="timeWin">0</div>
+        </div>
+        <div class="moves">
+            <div class="info__title">Moves:</div>
+            <div class="info__value" id="movesWin">0</div>
+        </div>
+        <button class="win__button" id="playAgain" onclick="game.clear(); game.init();">Play again</button>
+        <a class="replay" id="replay" href="javascript:game.replay()">Watch replay</a>
+    </div>
+    <table id="minesweeper" class="minesweeper"></table>
+</body>
+
+</html>

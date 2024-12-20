@@ -1,0 +1,181 @@
+html {
+    font-family: monospace;
+    overflow: auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url("../assets/images/bg.png");
+    text-align: center;
+}
+
+h1.title {
+    font-size: 3vw;
+    color: rgb(0, 0, 0);
+}
+
+table.minesweeper {
+    margin: 0 auto;
+    border-collapse: collapse;
+    cursor: pointer;
+}
+
+td.cell {
+    font-weight: bold;
+    font-size: calc(2vw + 10px);
+    line-height: calc(4vw + 10px);
+    width: calc(4vw + 10px);
+    max-width: 150px;
+    height: calc(4vw + 10px);
+    max-height: 150px;
+    text-align: center;
+    vertical-align: middle;
+    background: rgb(189, 189, 189);
+    box-shadow: 4px 4px rgb(225, 225, 225) inset, -4px -4px rgb(123, 123, 123) inset;
+}
+
+img.flag,
+img.mine {
+    width: 70%;
+    height: 70%;
+    vertical-align: middle;
+    line-height: calc(4vw + 10px);
+}
+
+div.game-info {
+    position: relative;
+    width: calc(40vw + 100px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    max-width: 1000px;
+    font-size: 1.5vw;
+    color: rgb(0, 0, 0);
+}
+
+div.game-info span {
+    font-weight: bold;
+}
+
+div.game-info .game-info__timer,
+div.game-info .game-info__flags {
+    color: rgb(255, 0, 0);
+}
+
+div.game-info i {
+    font-size: 2.5vw;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 50%;
+}
+
+div.game-info i:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+div.win {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 500px;
+    padding: 25px 50px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    background: rgba(217, 214, 214, 0.9);
+    color: blue;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+div.win-active {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+
+div.win .replay {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+div.win .replay:hover {
+    text-decoration: underline;
+}
+
+div.win .win__message__title {
+    font-size: 3vw;
+    font-weight: bold;
+}
+
+div.win .info__title {
+    font-size: 2vw;
+    font-weight: 500;
+}
+
+div.win .info__value {
+    font-size: 2.5vw;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+div.win button {
+    padding: 10px 20px;
+    font-size: 1.5vw;
+    background: rgba(0, 0, 255, 0.75);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+div.win button:hover {
+    background: rgb(0, 0, 255);
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    h1.title {
+        font-size: 6.5vw;
+    }
+
+    td.cell {
+        font-size: calc(3vw + 10px);
+        line-height: calc(6vw + 10px);
+        width: calc(6vw + 10px);
+        height: calc(6vw + 10px);
+        box-shadow: 3px 3px rgb(225, 225, 225) inset, -3px -3px rgb(123, 123, 123) inset;
+    }
+
+    div.game-info {
+        font-size: 3vw;
+        width: calc(65vw + 100px);
+    }
+
+    div.game-info i {
+        font-size: 5vw;
+    }
+}
